@@ -1,11 +1,11 @@
-# filippo.io/edwards25519
+# github.com/metacubex/edwards25519
 
 ```
-import "filippo.io/edwards25519"
+import "github.com/metacubex/edwards25519"
 ```
 
 This library implements the edwards25519 elliptic curve, exposing the necessary APIs to build a wide array of higher-level primitives.
-Read the docs at [pkg.go.dev/filippo.io/edwards25519](https://pkg.go.dev/filippo.io/edwards25519).
+Read the docs at [pkg.go.dev/github.com/metacubex/edwards25519](https://pkg.go.dev/github.com/metacubex/edwards25519).
 
 The package tracks the upstream standard library package `crypto/internal/fips140/edwards25519` and extends it with additional functionality.
 

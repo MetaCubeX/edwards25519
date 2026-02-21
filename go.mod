@@ -1,3 +1,3 @@
-module filippo.io/edwards25519
+module github.com/metacubex/edwards25519
 
 go 1.20
