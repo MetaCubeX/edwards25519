@@ -9,7 +9,6 @@ package edwards25519
 
 import (
 	"errors"
-	"slices"
 
 	"filippo.io/edwards25519/field"
 )
@@ -253,14 +252,12 @@ func (v *Point) MultiScalarMult(scalars []*Scalar, points []*Point) *Point {
 	// between each point in the multiscalar equation.
 
 	// Build lookup tables for each point
-	tables := make([]projLookupTable, 0, 2) // avoid allocation for small sizes
-	tables = slices.Grow(tables, len(points))[:len(points)]
+	tables := make([]projLookupTable, len(points))
 	for i := range tables {
 		tables[i].FromP3(points[i])
 	}
 	// Compute signed radix-16 digits for each scalar
-	digits := make([][64]int8, 0, 2) // avoid allocation for small sizes
-	digits = slices.Grow(digits, len(scalars))[:len(scalars)]
+	digits := make([][64]int8, len(scalars))
 	for i := range digits {
 		digits[i] = scalars[i].signedRadix16()
 	}
